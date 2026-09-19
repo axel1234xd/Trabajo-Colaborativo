@@ -12,16 +12,20 @@
 <body>
 
     <header>
-        <a href="#inicio">La Biblioteca del Laberinto</a>
+    <a href="#inicio">La Biblioteca del Laberinto</a>
 
-        <nav aria-label="Navegación principal">
-            <ul>
-                <li><a href="#catalogo">Catálogo</a></li>
-                <li><a href="#recomendados">Recomendados</a></li>
-                <li><a href="#club">Club de lectura</a></li>
-            </ul>
-        </nav>
-    </header>
+    
+    <button class="menu-hamburger" aria-label="Abrir menú">☰</button>
+
+    <nav aria-label="Navegación principal">
+        <ul>
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#recomendados">Recomendados</a></li>
+            <li><a href="#club">Club de lectura</a></li>
+        </ul>
+    </nav>
+</header>
+
 
     <main>
 
@@ -29,7 +33,7 @@
             <h1>Libros escogidos uno por uno</h1>
             <p>Novedades, usados en buen estado y recomendaciones de quienes los han leído.</p>
             <a href="#catalogo">Ver el catálogo</a>
-            <img src="img/hero-libreria.jpg" alt="Estantes de madera llenos de libros">
+            <img src="img/libreria.jpg" alt="Estantes de madera llenos de libros">
         </section>
 
         <section id="catalogo">
@@ -61,7 +65,6 @@
         <section id="recomendados">
             <h2>Recomendados del mes</h2>
 
-<<<<<<< HEAD
       <article>
         <img src="img/muerte.jpg" alt="Portada del libro Las intermitencias de la muerte">
         <h3>Las intermitencias de la muerte</h3>
@@ -89,35 +92,6 @@
         <a href="#">Reservar ejemplar</a>
       </article>
     </section>
-=======
-            <article>
-                <img src="img/libro-1.jpg" alt="Portada del libro Los días de la sal">
-                <h3>Los días de la sal</h3>
-                <p>Marina Estévez · Novela</p>
-                <p>Una familia de pescadores que pierde el mar en una sola temporada.</p>
-                <p><strong>S/ 62.00</strong></p>
-                <a href="#">Reservar ejemplar</a>
-            </article>
-
-            <article>
-                <img src="img/libro-2.jpg" alt="Portada del libro Cuaderno de plantas urbanas">
-                <h3>Cuaderno de plantas urbanas</h3>
-                <p>Julián Roca · Ilustrado</p>
-                <p>Guía de lo que crece en las grietas de la ciudad, con acuarelas del autor.</p>
-                <p><strong>S/ 85.00</strong></p>
-                <a href="#">Reservar ejemplar</a>
-            </article>
-
-            <article>
-                <img src="img/libro-3.jpg" alt="Portada del libro El turno de la noche">
-                <h3>El turno de la noche</h3>
-                <p>Ana Wong · Crónica</p>
-                <p>Doce horas con quienes trabajan mientras la ciudad duerme.</p>
-                <p><strong>S/ 54.00</strong></p>
-                <a href="#">Reservar ejemplar</a>
-            </article>
-        </section>
->>>>>>> db74ef8ec3d427ea9ba9e9e852c423cbb6325b70
 
         <section id="club">
             <h2>Club de lectura</h2>
@@ -136,10 +110,11 @@
                 <button type="submit">Apuntarme</button>
             </form>
         </section>
-
-        
-
     </main>
+
+    <a href="https://wa.me/51929888655" class="float-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat en WhatsApp">
+        <img src="img/WhatsApp_icon.png" alt="Icono oficial de WhatsApp" class="img-whatsapp">
+    </a>
 
     <footer>
         <nav aria-label="Enlaces del pie">
@@ -152,6 +127,27 @@
         <p><small>© 2026 La Biblioteca del Laberinto</small></p>
     </footer>
 
+    
+    <script>
+        const hamburger = document.querySelector('.menu-hamburger');
+        const navMenu = document.querySelector('header nav');
+        const navLinks = document.querySelectorAll('header nav a');
+
+        // Abre y cierra el menú al hacer clic en el botón ☰
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Cierra el menú automáticamente cuando se hace clic en cualquier opción
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
+
+
+
 
 </html>

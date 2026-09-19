@@ -352,21 +352,107 @@ footer ul a:hover {
     }
 }
 
+/* Estilo del botón hamburguesa para computadoras (Oculto por defecto) */
+.menu-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: #FDFBF7;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        gap: 1.2rem;
+        position: relative;
+        padding: 1.2rem 1.5rem;
+    }
+
+    header a:first-child {
+        font-size: 1.2rem;
+    }
+
+    /* Muestra el botón hamburguesa en celulares */
+    .menu-hamburger {
+        display: block;
+    }
+
+    /* Oculta el menú desplegable fuera de la pantalla */
+    header nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #4E251C;
+        border-bottom: 4px solid #801818;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    /* Clase mágica que usará JavaScript para abrir el menú */
+    header nav.active {
+        display: block;
     }
 
     header ul {
-        gap: 1.2rem;
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        padding: 0;
     }
 
-    #inicio h1 {
-        font-size: 2.4rem;
+    header nav a {
+        font-size: 1.05rem;
+        display: block;
+        padding: 1rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        text-align: center;
+    }
+
+    #inicio {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 3rem 1.5rem;
+    }
+
+    #inicio img {
+        width: 75%;
+        margin-bottom: 2rem;
     }
 
     #catalogo li, #recomendados article {
         width: 100%;
     }
+}
+
+
+
+/* WhatsApp - boton flotante */
+.float-whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:60px;
+    height:60px;
+    background:#25d366;
+    color:#fff;
+    border-radius:50%;
+    box-shadow:0 4px 10px rgba(0,0,0,.3);
+    z-index:2000;
+    transition:transform .3s ease;
+}
+.float-whatsapp:hover{
+    transform:scale(1.1);
+}
+.img-whatsapp{
+    width:35px;
+    height:35px;
+    object-fit:contain;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
 }
